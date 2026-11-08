@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -401,6 +400,95 @@
 >✆</a>
 
 <script src="script.js"></script>
+
+<!-- COOKIE BANNER PRIVILEGE -->
+<div id="cookie-banner" class="cookie-banner" hidden>
+
+  <div class="cookie-content">
+
+    <span class="cookie-brand">PRIVILEGE</span>
+
+    <h2>La tua privacy conta</h2>
+
+    <p>
+      Utilizziamo cookie tecnici necessari al funzionamento del sito.
+      Con il tuo consenso possiamo utilizzare cookie facoltativi
+      per statistiche e marketing.
+      Puoi accettarli, rifiutarli o personalizzare le tue preferenze.
+    </p>
+
+    <div class="cookie-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookie.html">Cookie Policy</a>
+    </div>
+
+    <div class="cookie-actions">
+
+      <button type="button" id="cookie-reject" class="cookie-btn">
+        Rifiuta
+      </button>
+
+      <button type="button" id="cookie-settings" class="cookie-btn">
+        Personalizza
+      </button>
+
+      <button type="button" id="cookie-accept" class="cookie-btn gold">
+        Accetta tutti
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- FINE COOKIE BANNER -->
+
+<!-- PREFERENZE COOKIE -->
+<div id="cookie-preferences" class="cookie-preferences" hidden>
+
+  <div class="cookie-preferences-box">
+
+    <span class="cookie-brand">PRIVILEGE</span>
+
+    <h2>Personalizza le preferenze</h2>
+
+    <p>Scegli quali cookie facoltativi autorizzare.</p>
+
+    <div class="cookie-option">
+      <div>
+        <strong>Cookie tecnici</strong>
+        <p>Necessari al funzionamento del sito.</p>
+      </div>
+      <span class="always-active">Sempre attivi</span>
+    </div>
+
+    <label class="cookie-option">
+      <div>
+        <strong>Statistiche</strong>
+        <p>Ci aiutano a migliorare il sito.</p>
+      </div>
+      <input type="checkbox" id="cookie-analytics">
+    </label>
+
+    <label class="cookie-option">
+      <div>
+        <strong>Marketing</strong>
+        <p>Per eventuali attività pubblicitarie.</p>
+      </div>
+      <input type="checkbox" id="cookie-marketing">
+    </label>
+
+    <button type="button" id="cookie-save" class="cookie-btn gold full">
+      Salva le mie preferenze
+    </button>
+
+  </div>
+</div>
+
+<!-- PULSANTE PREFERENZE -->
+<button type="button" id="cookie-reopen" class="cookie-reopen">
+  Preferenze cookie
+</button>
 
 </body>
 </html>
