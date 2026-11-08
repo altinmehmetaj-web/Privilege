@@ -599,3 +599,131 @@ h1 em, h2 em {
     font-size: 40px;
   }
 }
+
+/* =================================
+   FOOTER PRIVILEGE - NERO E ORO
+================================= */
+
+.footer {
+  width: 100%;
+  padding: 55px 20px 25px;
+  background: #080808;
+  border-top: 1px solid rgba(214, 173, 85, 0.45);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* LOGO */
+
+.footer-logo {
+  display: block;
+  width: 150px;
+  max-width: 70%;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+/* FRASE SOTTO IL LOGO */
+
+.footer > p {
+  color: #c9c9c9;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  margin: 0 0 25px;
+  font-style: italic;
+}
+
+/* SOCIAL NETWORK */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 25px 0 30px;
+}
+
+.social-links a {
+  color: #d6ad55;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+/* LINK LEGALI */
+
+.legal-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 850px;
+  margin: 30px auto 20px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(214, 173, 85, 0.25);
+}
+
+.legal-links a {
+  color: #d6ad55;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+  color: #fff;
+}
+
+.legal-links span {
+  color: #71603d;
+  font-size: 12px;
+}
+
+/* COPYRIGHT */
+
+.copyright {
+  color: #888;
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 15px;
+  letter-spacing: 0.4px;
+}
+
+/* VERSIONE SMARTPHONE */
+
+@media (max-width: 600px) {
+
+  .footer {
+    padding: 40px 15px 20px;
+  }
+
+  .footer-logo {
+    width: 125px;
+  }
+
+  .social-links {
+    gap: 18px;
+  }
+
+  .legal-links {
+    gap: 10px;
+    max-width: 350px;
+  }
+
+  .legal-links a {
+    font-size: 11px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+
+}
+
