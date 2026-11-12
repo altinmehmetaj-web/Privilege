@@ -217,35 +217,58 @@
         </a>
       </div>
 
-      <form id="contactForm">
-        <label for="name">Nome e cognome</label>
-        <input id="name" name="name" type="text" required placeholder="Il tuo nome">
+<form id="contactForm"
+      action="https://formspree.io/f/xppdwpyg"
+      method="POST">
 
-        <label for="phone">Telefono</label>
-        <input id="phone" name="phone" type="tel" required placeholder="Il tuo numero">
+  <input type="hidden" name="_subject"
+         value="Nuova richiesta dal sito PRIVILEGE">
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="La tua email">
+  <label for="name">Nome e cognome</label>
+  <input id="name" name="name" type="text"
+         required placeholder="Il tuo nome">
 
-        <label for="interest">Sono interessato/a a</label>
-        <select id="interest" name="interest">
-          <option>Informazioni sui servizi</option>
-          <option>Consulenza capelli</option>
-          <option>Prodotti PRIVILEGE</option>
-          <option>Collaborazioni</option>
-          <option>Altro</option>
-        </select>
+  <label for="phone">Telefono</label>
+  <input id="phone" name="phone" type="tel"
+         required placeholder="Il tuo numero">
 
-        <label for="message">Messaggio</label>
-        <textarea id="message" name="message" rows="4" placeholder="Scrivi il tuo messaggio..."></textarea>
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email"
+         required placeholder="La tua email">
 
-        <label class="privacy">
-          <input type="checkbox" id="privacy-consent" required>
-          <span>Dichiaro di aver letto l'<a href="privacy.html" target="_blank" rel="noopener noreferrer"><u>informativa privacy</u></a>.</span>
-        </label>
+  <label for="interest">Sono interessato/a a</label>
+  <select id="interest" name="interest" required>
+    <option value="Informazioni sui servizi">Informazioni sui servizi</option>
+    <option value="Consulenza capelli">Consulenza capelli</option>
+    <option value="Prodotti PRIVILEGE">Prodotti PRIVILEGE</option>
+    <option value="Collaborazioni">Collaborazioni</option>
+    <option value="Altro">Altro</option>
+  </select>
 
-        <button type="submit" class="btn gold">Invia richiesta</button>
-      </form>
+  <label for="message">Messaggio</label>
+  <textarea id="message" name="message" rows="4"
+            placeholder="Scrivi il tuo messaggio..."></textarea>
+
+  <label class="privacy">
+    <input type="checkbox" name="privacy_consent"
+           value="Accettato" required>
+    <span>
+      Dichiaro di aver letto l'
+      <a href="privacy.html" target="_blank" rel="noopener noreferrer">
+        <u>informativa privacy</u>
+      </a>.
+    </span>
+  </label>
+
+  <button type="submit" class="btn gold">
+    Invia richiesta
+  </button>
+
+</form>
+
+<div id="form-status" class="form-status"
+     role="status" aria-live="polite"></div>
+
     </section>
 
   </main>
