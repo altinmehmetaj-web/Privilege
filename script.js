@@ -1,6 +1,6 @@
 
 /* =========================================
-   PRIVILEGE - JAVASCRIPT COMPLETO
+   PRIVILEGE - SCRIPT COMPLETO
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,15 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const navigation = document.querySelector(".navigation");
 
   if (menuButton && navigation) {
-
     menuButton.addEventListener("click", function () {
       const isOpen = navigation.classList.toggle("open");
 
       menuButton.setAttribute("aria-expanded", String(isOpen));
-      menuButton.setAttribute(
-        "aria-label",
-        isOpen ? "Chiudi menu" : "Apri menu"
-      );
+      menuButton.setAttribute("aria-label", isOpen ? "Chiudi menu" : "Apri menu");
     });
 
     navigation.querySelectorAll("a").forEach(function (link) {
@@ -46,47 +42,88 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =======================================
-     3. MODULO CONTATTI WHATSAPP
+     3. MODULO CONTATTI - FORMSPREE
+     NON APRE WHATSAPP
   ======================================= */
 
   const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("form-status");
 
-  if (contactForm) {
+  if (contactForm && formStatus) {
 
-    contactForm.addEventListener("submit", function (event) {
+    contactForm.addEventListener("submit", async function (event) {
 
       event.preventDefault();
 
-      const name = document.getElementById("name")?.value.trim() || "";
-      const phone = document.getElementById("phone")?.value.trim() || "";
-      const email = document.getElementById("email")?.value.trim() || "";
-      const interest = document.getElementById("interest")?.value || "";
-      const message = document.getElementById("message")?.value.trim() || "";
+      const submitButton = contactForm.querySelector('button[type="submit"]');
 
-      const whatsappNumber = "393291583168";
+      if (!submitButton || submitButton.disabled) {
+        return;
+      }
 
-      const whatsappMessage =
-        "Ciao Marina, ti contatto dal sito PRIVILEGE.\n\n" +
-        "Nome: " + name + "\n" +
-        "Telefono: " + phone + "\n" +
-        "Email: " + email + "\n" +
-        "Interesse: " + interest + "\n" +
-        "Messaggio: " + message;
+      submitButton.disabled = true;
+      submitButton.textContent = "INVIO IN CORSO...";
 
-      const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(whatsappMessage);
+      formStatus.className = "form-status";
+      formStatus.textContent = "";
 
-      window.open(whatsappURL, "_blank", "noopener,noreferrer");
+      try {
+
+        const response = await fetch(
+          "https://formspree.io/f/xppdwpyg",
+          {
+            method: "POST",
+            body: new FormData(contactForm),
+            headers: {
+              "Accept": "application/json"
+            }
+          }
+        );
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(
+            result.errors?.map(error => error.message).join(", ") ||
+            "Invio non riuscito."
+          );
+        }
+
+        formStatus.className = "form-status success";
+
+        formStatus.textContent =
+          "Grazie per aver contattato PRIVILEGE! " +
+          "Abbiamo ricevuto la tua richiesta. " +
+          "Marina ti ricontatterà al più presto.";
+
+        contactForm.reset();
+
+      } catch (error) {
+
+        console.error("Errore Formspree:", error);
+
+        formStatus.className = "form-status error";
+
+        formStatus.textContent =
+          "Non siamo riusciti a inviare la richiesta. " +
+          "Controlla la connessione e riprova.";
+
+      } finally {
+
+        submitButton.disabled = false;
+        submitButton.textContent = "INVIA RICHIESTA";
+
+      }
 
     });
+
+  } else {
+    console.error("PRIVILEGE: modulo o messaggio di conferma non trovato.");
   }
 
 
   /* =======================================
-     4. SISTEMA CONSENSO COOKIE
+     4. GESTIONE COOKIE
   ======================================= */
 
   const banner = document.getElementById("cookie-banner");
@@ -104,161 +141,118 @@ document.addEventListener("DOMContentLoaded", function () {
   const STORAGE_KEY = "privilege_cookie_consent";
   const CONSENT_VERSION = 1;
 
-  if (!banner || !preferences) {
-    console.error("PRIVILEGE: elementi del banner cookie non trovati.");
-    return;
-  }
-
   if (
-    !acceptButton ||
-    !rejectButton ||
-    !settingsButton ||
-    !saveButton ||
-    !reopenButton ||
-    !analyticsCheckbox ||
-    !marketingCheckbox
+    banner &&
+    preferences &&
+    acceptButton &&
+    rejectButton &&
+    settingsButton &&
+    saveButton &&
+    reopenButton &&
+    analyticsCheckbox &&
+    marketingCheckbox
   ) {
-    console.error("PRIVILEGE: uno o più pulsanti cookie non sono presenti.");
-    return;
-  }
 
+    function getConsent() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
 
-  /* Legge il consenso salvato */
+        if (!saved) return null;
 
-  function getConsent() {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
+        const consent = JSON.parse(saved);
 
-      if (!saved) {
+        if (
+          consent.version !== CONSENT_VERSION ||
+          typeof consent.analytics !== "boolean" ||
+          typeof consent.marketing !== "boolean"
+        ) {
+          return null;
+        }
+
+        return consent;
+
+      } catch (error) {
+        console.error("Errore lettura cookie:", error);
         return null;
       }
-
-      const consent = JSON.parse(saved);
-
-      if (
-        consent.version !== CONSENT_VERSION ||
-        typeof consent.analytics !== "boolean" ||
-        typeof consent.marketing !== "boolean"
-      ) {
-        return null;
-      }
-
-      return consent;
-
-    } catch (error) {
-      console.error("Errore nella lettura delle preferenze cookie:", error);
-      return null;
     }
-  }
 
 
-  /* Salva le preferenze */
+    function saveConsent(analytics, marketing) {
 
-  function saveConsent(analytics, marketing) {
+      const consent = {
+        version: CONSENT_VERSION,
+        necessary: true,
+        analytics: analytics,
+        marketing: marketing,
+        date: new Date().toISOString()
+      };
 
-    const consent = {
-      version: CONSENT_VERSION,
-      necessary: true,
-      analytics: analytics,
-      marketing: marketing,
-      date: new Date().toISOString()
-    };
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
 
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+        banner.hidden = true;
+        preferences.hidden = true;
+
+      } catch (error) {
+        console.error("Errore salvataggio cookie:", error);
+        alert("Impossibile salvare le preferenze cookie.");
+      }
+    }
+
+
+    function showBanner() {
+      preferences.hidden = true;
+      banner.hidden = false;
+    }
+
+
+    function showPreferences() {
+      const consent = getConsent();
+
+      analyticsCheckbox.checked = consent ? consent.analytics : false;
+      marketingCheckbox.checked = consent ? consent.marketing : false;
 
       banner.hidden = true;
-      preferences.hidden = true;
-
-      console.log("PRIVILEGE: preferenze cookie salvate.");
-
-    } catch (error) {
-      console.error("Impossibile salvare le preferenze cookie:", error);
-      alert("Non è stato possibile salvare le preferenze. Controlla le impostazioni del browser.");
+      preferences.hidden = false;
     }
-  }
 
 
-  /* Mostra il banner iniziale */
-
-  function showBanner() {
-    preferences.hidden = true;
-    banner.hidden = false;
-  }
+    acceptButton.addEventListener("click", function () {
+      saveConsent(true, true);
+    });
 
 
-  /* Mostra la finestra di personalizzazione */
-
-  function showPreferences() {
-
-    const currentConsent = getConsent();
-
-    analyticsCheckbox.checked =
-      currentConsent ? currentConsent.analytics : false;
-
-    marketingCheckbox.checked =
-      currentConsent ? currentConsent.marketing : false;
-
-    banner.hidden = true;
-    preferences.hidden = false;
-  }
+    rejectButton.addEventListener("click", function () {
+      saveConsent(false, false);
+    });
 
 
-  /* Accetta tutti i cookie facoltativi */
-
-  acceptButton.addEventListener("click", function () {
-    saveConsent(true, true);
-  });
+    settingsButton.addEventListener("click", showPreferences);
 
 
-  /* Rifiuta tutti i cookie facoltativi */
-
-  rejectButton.addEventListener("click", function () {
-    saveConsent(false, false);
-  });
-
-
-  /* Apre le preferenze dal banner */
-
-  settingsButton.addEventListener("click", function () {
-    showPreferences();
-  });
+    saveButton.addEventListener("click", function () {
+      saveConsent(
+        analyticsCheckbox.checked,
+        marketingCheckbox.checked
+      );
+    });
 
 
-  /* Salva le preferenze personalizzate */
-
-  saveButton.addEventListener("click", function () {
-
-    saveConsent(
-      analyticsCheckbox.checked,
-      marketingCheckbox.checked
-    );
-
-  });
+    reopenButton.addEventListener("click", showPreferences);
 
 
-  /* Riapre le preferenze in qualsiasi momento */
+    if (getConsent()) {
+      banner.hidden = true;
+      preferences.hidden = true;
+    } else {
+      showBanner();
+    }
 
-  reopenButton.addEventListener("click", function () {
-    showPreferences();
-  });
-
-
-  /* Visualizzazione iniziale */
-
-  const existingConsent = getConsent();
-
-  if (existingConsent) {
-    banner.hidden = true;
-    preferences.hidden = true;
   } else {
-    showBanner();
+    console.error("PRIVILEGE: elementi del sistema cookie non trovati.");
   }
 
-
-  /* =======================================
-     5. FINE SISTEMA COOKIE
-  ======================================= */
 
   console.log("PRIVILEGE: JavaScript caricato correttamente.");
 
