@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -5,514 +6,356 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>PRIVILEGE | Hair Beauty by Marina Siti</title>
-
   <meta name="description" content="PRIVILEGE by Marina Siti. Oltre 20 anni di esperienza nel mondo dell'hairstyling, bellezza e cura dei capelli.">
-
   <meta name="theme-color" content="#080808">
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="header">
-  <a href="#home" class="logo">
-    <img src="assets/logo.png" alt="PRIVILEGE by Marina Siti">
-  </a>
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#home" class="logo">
+      <img src="assets/logo.png" alt="PRIVILEGE by Marina Siti">
+    </a>
 
-  <button class="menu-toggle" aria-label="Apri menu">☰</button>
+    <button class="menu-toggle" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="main-navigation">☰</button>
 
-  <nav class="navigation">
-    <a href="#home">Home</a>
-    <a href="#marina">Chi sono</a>
-    <a href="#servizi">Servizi</a>
-    <a href="#shop">Shop</a>
-    <a href="#contatti" class="nav-button">Contatti</a>
-  </nav>
-</header>
+    <nav class="navigation" id="main-navigation">
+      <a href="#home">Home</a>
+      <a href="#marina">Chi sono</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#shop">Shop</a>
+      <a href="#contatti" class="nav-button">Contatti</a>
+    </nav>
+  </header>
 
-<main>
+  <main>
 
-<!-- HERO -->
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">HAIR BEAUTY · STYLE · ELEGANCE</span>
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <span class="eyebrow">HAIR BEAUTY · STYLE · ELEGANCE</span>
+        <h1>La bellezza è un'<em>esperienza.</em></h1>
 
-    <h1>
-      La bellezza è un'<em>esperienza.</em>
-    </h1>
+        <p>
+          Benvenuti nel mondo PRIVILEGE.
+          Dove professionalità, passione e attenzione
+          ai dettagli incontrano la bellezza autentica.
+        </p>
 
-    <p>
-      Benvenuti nel mondo PRIVILEGE.
-      Dove professionalità, passione e attenzione
-      ai dettagli incontrano la bellezza autentica.
-    </p>
+        <div class="hero-buttons">
+          <a href="#servizi" class="btn gold">Scopri i servizi</a>
+          <a href="#marina" class="btn outline">La mia storia</a>
+        </div>
+      </div>
+    </section>
 
-    <div class="hero-buttons">
-      <a href="#servizi" class="btn gold">Scopri i servizi</a>
-      <a href="#marina" class="btn outline">La mia storia</a>
-    </div>
-  </div>
-</section>
+    <!-- INTRODUZIONE -->
+    <section class="intro section" id="filosofia">
+      <span class="eyebrow">IL MONDO PRIVILEGE</span>
 
-<!-- INTRODUZIONE -->
+      <h2>Non solo capelli.<br><em>Un modo di essere.</em></h2>
 
-<section class="intro section" id="filosofia">
+      <p class="intro-text">
+        PRIVILEGE nasce dalla passione per il mondo
+        dell'hairstyling e dalla volontà di valorizzare
+        ogni persona attraverso bellezza, stile e cura.
+        Ogni dettaglio conta. Ogni persona è unica.
+      </p>
 
-  <span class="eyebrow">IL MONDO PRIVILEGE</span>
+      <div class="values">
+        <article>
+          <span>01</span>
+          <h3>Passione</h3>
+          <p>Amore per il proprio lavoro e ricerca continua.</p>
+        </article>
 
-  <h2>
-    Non solo capelli.<br>
-    <em>Un modo di essere.</em>
-  </h2>
+        <article>
+          <span>02</span>
+          <h3>Professionalità</h3>
+          <p>Esperienza, attenzione e cura dei dettagli.</p>
+        </article>
 
-  <p class="intro-text">
-    PRIVILEGE nasce dalla passione per il mondo
-    dell'hairstyling e dalla volontà di valorizzare
-    ogni persona attraverso bellezza, stile e cura.
-    Ogni dettaglio conta. Ogni persona è unica.
-  </p>
+        <article>
+          <span>03</span>
+          <h3>Personalità</h3>
+          <p>Uno stile che valorizza l'identità di ogni persona.</p>
+        </article>
+      </div>
+    </section>
 
-  <div class="values">
+    <!-- MARINA -->
+    <section class="marina section" id="marina">
+      <div class="marina-image">
+        <img src="assets/marina-siti.jpg" alt="Marina Siti, fondatrice di PRIVILEGE">
+      </div>
 
-    <article>
-      <span>01</span>
-      <h3>Passione</h3>
-      <p>Amore per il proprio lavoro e ricerca continua.</p>
-    </article>
+      <div class="marina-content">
+        <span class="eyebrow">LA PERSONA DIETRO PRIVILEGE</span>
 
-    <article>
-      <span>02</span>
-      <h3>Professionalità</h3>
-      <p>Esperienza, attenzione e cura dei dettagli.</p>
-    </article>
+        <h2>La mia storia,<br><em>la mia passione.</em></h2>
 
-    <article>
-      <span>03</span>
-      <h3>Personalità</h3>
-      <p>Uno stile che valorizza l'identità di ogni persona.</p>
-    </article>
+        <p>
+          Mi chiamo Marina Siti, ho 40 anni e da oltre
+          20 anni il mondo dell'acconciatura è parte
+          della mia vita.
+        </p>
 
-  </div>
-</section>
+        <p>
+          In questi anni ho trasformato una passione
+          in una professione, costruendo un percorso
+          fatto di esperienza, creatività e continua
+          ricerca della bellezza.
+        </p>
 
-<!-- MARINA -->
+        <p>
+          Ho imparato che i capelli non sono soltanto
+          una questione di estetica: rappresentano
+          personalità, sicurezza e libertà di esprimersi.
+        </p>
 
-<section class="marina section" id="marina">
+        <p>
+          Da questa visione nasce PRIVILEGE:
+          un progetto che racchiude la mia filosofia,
+          la mia esperienza e il desiderio di offrire
+          a ogni persona un'esperienza speciale.
+        </p>
 
-  <div class="marina-image">
-    <img
-      src="assets/marina-siti.jpg"
-      alt="Marina Siti, fondatrice di PRIVILEGE"
-    >
-  </div>
+        <div class="signature">Marina Siti</div>
+      </div>
+    </section>
 
-  <div class="marina-content">
+    <!-- SERVIZI -->
+    <section class="services section" id="servizi">
+      <span class="eyebrow">I NOSTRI SERVIZI</span>
 
-    <span class="eyebrow">LA PERSONA DIETRO PRIVILEGE</span>
+      <h2>Esprimi il tuo stile.<br><em>Valorizza la tua bellezza.</em></h2>
 
-    <h2>
-      La mia storia,<br>
-      <em>la mia passione.</em>
-    </h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <span>01</span>
+          <h3>Taglio &amp; Styling</h3>
+          <p>Tagli personalizzati, pieghe e styling per ogni occasione.</p>
+        </article>
 
-    <p>
-      Mi chiamo Marina Siti, ho 40 anni e da oltre
-      20 anni il mondo dell'acconciatura è parte
-      della mia vita.
-    </p>
+        <article class="service-card">
+          <span>02</span>
+          <h3>Colore &amp; Riflessi</h3>
+          <p>Colorazioni, sfumature e tecniche per un risultato armonioso.</p>
+        </article>
 
-    <p>
-      In questi anni ho trasformato una passione
-      in una professione, costruendo un percorso
-      fatto di esperienza, creatività e continua
-      ricerca della bellezza.
-    </p>
+        <article class="service-card">
+          <span>03</span>
+          <h3>Trattamenti Hair</h3>
+          <p>Percorsi dedicati alla cura e al benessere dei capelli.</p>
+        </article>
 
-    <p>
-      Ho imparato che i capelli non sono soltanto
-      una questione di estetica: rappresentano
-      personalità, sicurezza e libertà di esprimersi.
-    </p>
+        <article class="service-card">
+          <span>04</span>
+          <h3>Consulenza Beauty</h3>
+          <p>Consigli personalizzati per trovare il look più adatto a te.</p>
+        </article>
+      </div>
+    </section>
 
-    <p>
-      Da questa visione nasce PRIVILEGE:
-      un progetto che racchiude la mia filosofia,
-      la mia esperienza e il desiderio di offrire
-      a ogni persona un'esperienza speciale.
-    </p>
+    <!-- SHOP -->
+    <section class="shop section" id="shop">
+      <span class="eyebrow">PRIVILEGE COLLECTION</span>
 
-    <div class="signature">Marina Siti</div>
+      <h2>La bellezza continua<br><em>anche a casa.</em></h2>
 
-  </div>
-</section>
+      <p class="shop-description">
+        Scopri il mondo dei prodotti PRIVILEGE,
+        pensati per accompagnare la tua routine
+        di bellezza quotidiana.
+      </p>
 
-<!-- SERVIZI -->
+      <div class="product-grid">
+        <article class="product-card">
+          <img src="assets/privilege-product.png" alt="Prodotto linea PRIVILEGE">
 
-<section class="services section" id="servizi">
+          <div class="product-details">
+            <span class="product-label">PRIVILEGE HAIR CARE</span>
+            <h3>Privilege Collection</h3>
+            <p>Scopri la nostra selezione dedicata alla cura dei capelli.</p>
+            <a href="#contatti" class="btn outline">Richiedi informazioni</a>
+          </div>
+        </article>
+      </div>
 
-  <span class="eyebrow">I NOSTRI SERVIZI</span>
+      <p class="shop-note">
+        Catalogo dimostrativo: prodotti e prezzi saranno
+        aggiornati in base alla collezione disponibile.
+      </p>
+    </section>
 
-  <h2>
-    Esprimi il tuo stile.<br>
-    <em>Valorizza la tua bellezza.</em>
-  </h2>
+    <!-- CONTATTI -->
+    <section class="contact section" id="contatti">
+      <div class="contact-info">
+        <span class="eyebrow">ENTRA IN CONTATTO</span>
 
-  <div class="service-grid">
+        <h2>Il tuo prossimo look<br><em>inizia qui.</em></h2>
 
-    <article class="service-card">
-      <span>01</span>
-      <h3>Taglio & Styling</h3>
-      <p>Tagli personalizzati, pieghe e styling per ogni occasione.</p>
-    </article>
+        <p>
+          Hai bisogno di informazioni sui servizi
+          o sui prodotti PRIVILEGE?
+          Scrivici, saremo felici di conoscerti.
+        </p>
 
-    <article class="service-card">
-      <span>02</span>
-      <h3>Colore & Riflessi</h3>
-      <p>Colorazioni, sfumature e tecniche per un risultato armonioso.</p>
-    </article>
-
-    <article class="service-card">
-      <span>03</span>
-      <h3>Trattamenti Hair</h3>
-      <p>Percorsi dedicati alla cura e al benessere dei capelli.</p>
-    </article>
-
-    <article class="service-card">
-      <span>04</span>
-      <h3>Consulenza Beauty</h3>
-      <p>Consigli personalizzati per trovare il look più adatto a te.</p>
-    </article>
-
-  </div>
-</section>
-
-<!-- SHOP -->
-
-<section class="shop section" id="shop">
-
-  <span class="eyebrow">PRIVILEGE COLLECTION</span>
-
-  <h2>
-    La bellezza continua<br>
-    <em>anche a casa.</em>
-  </h2>
-
-  <p class="shop-description">
-    Scopri il mondo dei prodotti PRIVILEGE,
-    pensati per accompagnare la tua routine
-    di bellezza quotidiana.
-  </p>
-
-  <div class="product-grid">
-
-    <article class="product-card">
-
-      <img
-        src="assets/privilege-product.png"
-        alt="Prodotto linea PRIVILEGE"
-      >
-
-      <div class="product-details">
-        <span class="product-label">PRIVILEGE HAIR CARE</span>
-        <h3>Privilege Collection</h3>
-        <p>Scopri la nostra selezione dedicata alla cura dei capelli.</p>
-
-        <a href="#contatti" class="btn outline">
-          Richiedi informazioni
+        <a class="whatsapp" href="https://wa.me/393291583168" target="_blank" rel="noopener noreferrer">
+          ✆ +39 329 158 3168
         </a>
       </div>
 
-    </article>
+      <form id="contactForm">
+        <label for="name">Nome e cognome</label>
+        <input id="name" name="name" type="text" required placeholder="Il tuo nome">
 
-  </div>
+        <label for="phone">Telefono</label>
+        <input id="phone" name="phone" type="tel" required placeholder="Il tuo numero">
 
-  <p class="shop-note">
-    Catalogo dimostrativo: prodotti e prezzi saranno
-    aggiornati in base alla collezione disponibile.
-  </p>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="La tua email">
 
-</section>
+        <label for="interest">Sono interessato/a a</label>
+        <select id="interest" name="interest">
+          <option>Informazioni sui servizi</option>
+          <option>Consulenza capelli</option>
+          <option>Prodotti PRIVILEGE</option>
+          <option>Collaborazioni</option>
+          <option>Altro</option>
+        </select>
 
-<!-- CONTATTI -->
+        <label for="message">Messaggio</label>
+        <textarea id="message" name="message" rows="4" placeholder="Scrivi il tuo messaggio..."></textarea>
 
-<section class="contact section" id="contatti">
+        <label class="privacy">
+          <input type="checkbox" id="privacy-consent" required>
+          <span>Dichiaro di aver letto l'<a href="privacy.html" target="_blank" rel="noopener noreferrer"><u>informativa privacy</u></a>.</span>
+        </label>
 
-  <div class="contact-info">
+        <button type="submit" class="btn gold">Invia richiesta</button>
+      </form>
+    </section>
 
-    <span class="eyebrow">ENTRA IN CONTATTO</span>
+  </main>
 
-    <h2>
-      Il tuo prossimo look<br>
-      <em>inizia qui.</em>
-    </h2>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img src="assets/logo.png" alt="PRIVILEGE Hair Beauty" class="footer-logo">
 
-    <p>
-      Hai bisogno di informazioni sui servizi
-      o sui prodotti PRIVILEGE?
-      Scrivici, saremo felici di conoscerti.
-    </p>
+    <p>Beauty is a personal statement.</p>
 
-    <a
-      class="whatsapp"
-      href="https://wa.me/393291583168"
-      target="_blank"
-    >
-      ✆ +39 329 158 3168
-    </a>
+    <div class="social-links">
+      <a href="https://www.instagram.com/marina_siti/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" aria-disabled="true">Facebook</a>
+      <a href="#" aria-disabled="true">YouTube</a>
+    </div>
 
-  </div>
-
-  <form id="contactForm">
-
-    <label for="name">Nome e cognome</label>
-    <input id="name" name="name" type="text" required placeholder="Il tuo nome">
-
-    <label for="phone">Telefono</label>
-    <input id="phone" name="phone" type="tel" required placeholder="Il tuo numero">
-
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" placeholder="La tua email">
-
-    <label for="interest">Sono interessato/a a</label>
-
-    <select id="interest" name="interest">
-      <option>Informazioni sui servizi</option>
-      <option>Consulenza capelli</option>
-      <option>Prodotti PRIVILEGE</option>
-      <option>Collaborazioni</option>
-      <option>Altro</option>
-    </select>
-
-    <label for="message">Messaggio</label>
-    <textarea
-      id="message"
-      name="message"
-      rows="4"
-      placeholder="Scrivi il tuo messaggio..."
-    ></textarea>
-
-    <label class="privacy">
-      <input type="checkbox" required>
-      Dichiaro di aver letto l'informativa privacy.
-    </label>
-
-    <button type="submit" class="btn gold">
-      Invia richiesta
-    </button>
-
-  </form>
-
-</section>
-
-</main>
-
-
-<!-- FOOTER PRIVILEGE -->
-<footer class="footer">
-
-  <!-- LOGO -->
-  <img
-    src="assets/logo.png"
-    alt="PRIVILEGE Hair Beauty"
-    class="footer-logo"
-  >
-
-  <p>Beauty is a personal statement.</p>
-
-  <!-- SOCIAL NETWORK -->
-  <div class="social-links">
-
-    <a
-      href="https://www.instagram.com/marina_siti/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Instagram
-    </a>
-
-    <a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Facebook
-    </a>
-
-    <a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      YouTube
-    </a>
-
-  </div>
-
-  <!-- LINK LEGALI -->
-  <div class="legal-links">
-
-    <a href="privacy.html">Privacy Policy</a>
-
-    <span>|</span>
-
-    <a href="cookie.html">Cookie Policy</a>
-
-    <span>|</span>
-
-    <a href="note-legali.html">Note legali</a>
-
-    <span>|</span>
-
-    <a href="termini.html">Condizioni di utilizzo</a>
-
-  </div>
-
-  <!-- COPYRIGHT -->
-  <div class="copyright">
-
-    © <span id="year"></span>
-    PRIVILEGE DI MARINA SITI.
-    P. IVA 04670010240.
-    Tutti i diritti riservati.
-
-  </div>
-
-</footer>
-
-<!-- ANNO AUTOMATICO -->
-<script>
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-</script>
-<!-- FINE FOOTER PRIVILEGE -->
-
-<a
-  href="https://wa.me/393291583168"
-  class="floating-whatsapp"
-  target="_blank"
-  aria-label="Contattaci su WhatsApp"
->✆</a>
-
-
-
-<!-- =========================================
-     PRIVILEGE - COOKIE CONSENT SYSTEM
-========================================= -->
-
-<!-- COOKIE BANNER INIZIALE -->
-
-<div id="cookie-banner" class="cookie-banner" hidden>
-
-  <div class="cookie-content">
-
-    <span class="cookie-brand">PRIVILEGE</span>
-
-    <h2>La tua privacy conta</h2>
-
-    <p>
-      Utilizziamo cookie tecnici necessari al funzionamento
-      del sito. Con il tuo consenso possiamo utilizzare cookie
-      facoltativi per statistiche e marketing.
-      Puoi accettarli, rifiutarli o personalizzare le tue preferenze.
-    </p>
-
-    <div class="cookie-links">
+    <div class="legal-links">
       <a href="privacy.html">Privacy Policy</a>
+      <span>|</span>
       <a href="cookie.html">Cookie Policy</a>
+      <span>|</span>
+      <a href="note-legali.html">Note legali</a>
+      <span>|</span>
+      <a href="termini.html">Condizioni di utilizzo</a>
     </div>
 
-    <div class="cookie-actions">
-
-      <button type="button" id="cookie-reject" class="cookie-btn">
-        Rifiuta
-      </button>
-
-      <button type="button" id="cookie-settings" class="cookie-btn">
-        Personalizza
-      </button>
-
-      <button type="button" id="cookie-accept" class="cookie-btn gold">
-        Accetta tutti
-      </button>
-
+    <div class="copyright">
+      © <span id="year">2026</span>
+      PRIVILEGE DI MARINA SITI.
+      P. IVA 04670010240.
+      Tutti i diritti riservati.
     </div>
+  </footer>
 
+  <!-- WHATSAPP FISSO -->
+  <a href="https://wa.me/393291583168"
+     class="floating-whatsapp"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contattaci su WhatsApp">✆</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title" hidden>
+    <div class="cookie-content">
+      <span class="cookie-brand">PRIVILEGE</span>
+      <h2 id="cookie-title">La tua privacy conta</h2>
+
+      <p>
+        Utilizziamo strumenti tecnici necessari al funzionamento
+        del sito. Solo con il tuo consenso possiamo attivare
+        strumenti facoltativi per statistiche e marketing.
+        Puoi accettare, rifiutare o personalizzare le preferenze.
+      </p>
+
+      <div class="cookie-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookie.html">Cookie Policy</a>
+      </div>
+
+      <div class="cookie-actions">
+        <button type="button" id="cookie-reject" class="cookie-btn">Rifiuta</button>
+        <button type="button" id="cookie-settings" class="cookie-btn">Personalizza</button>
+        <button type="button" id="cookie-accept" class="cookie-btn gold">Accetta tutti</button>
+      </div>
+    </div>
   </div>
 
-</div>
+  <!-- PREFERENZE COOKIE -->
+  <div id="cookie-preferences" class="cookie-preferences" role="dialog" aria-modal="true" aria-labelledby="cookie-preferences-title" hidden>
+    <div class="cookie-preferences-box">
+      <span class="cookie-brand">PRIVILEGE</span>
+      <h2 id="cookie-preferences-title">Personalizza le preferenze</h2>
+      <p>Scegli quali strumenti facoltativi autorizzare.</p>
 
-
-<!-- FINESTRA PERSONALIZZAZIONE -->
-
-<div id="cookie-preferences" class="cookie-preferences" hidden>
-
-  <div class="cookie-preferences-box">
-
-    <span class="cookie-brand">PRIVILEGE</span>
-
-    <h2>Personalizza le preferenze</h2>
-
-    <p>Scegli quali cookie facoltativi autorizzare.</p>
-
-    <div class="cookie-option">
-
-      <div>
-        <strong>Cookie tecnici</strong>
-        <p>Necessari al funzionamento del sito.</p>
+      <div class="cookie-option">
+        <div>
+          <strong>Strumenti tecnici</strong>
+          <p>Necessari al funzionamento del sito.</p>
+        </div>
+        <span class="always-active">Sempre attivi</span>
       </div>
 
-      <span class="always-active">Sempre attivi</span>
+      <label class="cookie-option">
+        <div>
+          <strong>Statistiche</strong>
+          <p>Ci aiutano a migliorare il sito.</p>
+        </div>
+        <input type="checkbox" id="cookie-analytics">
+      </label>
 
+      <label class="cookie-option">
+        <div>
+          <strong>Marketing</strong>
+          <p>Per eventuali attività pubblicitarie.</p>
+        </div>
+        <input type="checkbox" id="cookie-marketing">
+      </label>
+
+      <div class="cookie-actions">
+        <button type="button" id="cookie-save" class="cookie-btn gold full">
+          Salva le mie preferenze
+        </button>
+      </div>
     </div>
-
-    <label class="cookie-option">
-
-      <div>
-        <strong>Statistiche</strong>
-        <p>Ci aiutano a migliorare il sito.</p>
-      </div>
-
-      <input type="checkbox" id="cookie-analytics">
-
-    </label>
-
-    <label class="cookie-option">
-
-      <div>
-        <strong>Marketing</strong>
-        <p>Per eventuali attività pubblicitarie.</p>
-      </div>
-
-      <input type="checkbox" id="cookie-marketing">
-
-    </label>
-
-    <button type="button" id="cookie-save" class="cookie-btn gold full">
-      Salva le mie preferenze
-    </button>
-
   </div>
 
-</div>
-
-
-<!-- PULSANTE FISSO PER RIAPRIRE LE PREFERENZE -->
-
-<button type="button" id="cookie-reopen" class="cookie-reopen">
-  Preferenze cookie
-</button>
-
-
-<!-- CARICAMENTO JAVASCRIPT -->
-
-<script src="script.js"></script>
+  <!-- RIAPRI PREFERENZE -->
+  <button type="button" id="cookie-reopen" class="cookie-reopen">
+    Preferenze cookie
+  </button>
 
 </body>
 </html>
-
